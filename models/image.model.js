@@ -1,16 +1,21 @@
 const mongoose = require('mongoose');
 
-const imageSchema = mongoose.Schema({
+const imageSchema = new mongoose.Schema({
   name: {
     type: String,
-  },
-  image: {
-    type: Object,
-    required: true,
   },
   price: {
     type: String,
   },
+
+  image: {
+    type: String,
+  },
+  data: {
+    type: Object,
+  },
 });
 
-mongoose.model('Image', imageSchema);
+const Upload = mongoose.model('Upload', imageSchema);
+
+module.exports.Upload = Upload;
